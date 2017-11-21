@@ -11,10 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
+Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', 'ChannelController@index')->name('home');
+Route::resource('channels', 'ChannelController');
+
+
+Route::get('/statistics/store', 'StatisticsController@store');
