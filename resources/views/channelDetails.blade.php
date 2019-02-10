@@ -4,13 +4,13 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+            <div class="card">
+                <div class="card-header">
                     <a class="btn btn-warning" href="{{ URL::previous() }}">Back</a>
                     <h3>Channel Name: <a href="https://www.youtube.com/channel/{{$channel->channel_id}}" target="_blank">{{$channel->channel_name}}</a></h3>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     <table class="table">
                         <thead>
                             <tr>

@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-default">
+            <div class="card">
                 @if (session('success'))
                     <div class="alert alert-success">
                         {{ session('success') }}
@@ -23,12 +23,12 @@
                         </p>
                     </blockquote>
                 @endif
-                <div class="panel-heading">
+                <div class="card-header">
                     <h3>Dashboard</h3>
                     <a class="btn btn-info" href="{{route('channels.create')}}">Add Channel</a>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     <table class="table">
                         <thead>
                             <tr>
