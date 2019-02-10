@@ -15,7 +15,7 @@ class CreateStatisticsTable extends Migration
     {
         Schema::create('statistics', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('channel_id');//relationship with channels table
+            $table->unsignedInteger('channel_id');
             $table->bigInteger('viewCount');
             $table->integer('todaysView')->nullable();
             $table->integer('subscriberCount');
@@ -23,6 +23,10 @@ class CreateStatisticsTable extends Migration
             $table->integer('videoCount');
             $table->integer('todaysVideo')->nullable();;
             $table->timestamps();
+
+            $table->foreign('channel_id')
+                ->references('id')->on('channels')
+                ->onDelete('cascade');
         });
     }
 
