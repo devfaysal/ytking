@@ -9,6 +9,7 @@
 
                 <div class="panel-body">
                     <p class="text-center"><a href="{{ url('/auth/facebook') }}" class="btn btn-info">Login With Facebook</a></p>
+                    <p class="text-center"><a href="{{ url('/auth/github') }}" class="btn btn-info">Login With Github</a></p>
                 </div>
             </div>
         </div>

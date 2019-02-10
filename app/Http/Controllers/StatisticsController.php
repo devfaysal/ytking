@@ -11,7 +11,7 @@ class StatisticsController extends Controller
     public function store()
     {
         $channels = Channel::where('status', 1)->get();
-        $api_key = 'AIzaSyDDoUGeu3o1nvTq8QdwdTymwT_4G3XCu3M';
+        $api_key = config('services.youtube.api_key');
 
         foreach($channels as $channel){
             $url = 'https://www.googleapis.com/youtube/v3/channels?part=statistics&id=' . $channel->channel_id . '&key=' . $api_key;
